@@ -4,6 +4,13 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 
 const testimonials = [
   {
+    text: "Your passion for storytelling always shines through. You turned a simple candid moment into a beautiful memory I'll always cherish. Your dedication tells me you'll be the best photographer and editor in Basmath city. Service first, money later — keep growing!",
+    name: 'Adv Sahil Satpute',
+    role: 'Friend & Client',
+    avatar:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&q=80&fit=crop&crop=face',
+  },
+  {
     text: "RJ Media Works captured our wedding with such sensitivity and artistry. Every single image feels cinematic. We've printed a gallery wall and cannot stop staring at it. Worth every rupee.",
     name: 'Priya & Rohan',
     role: 'Wedding Clients, Mumbai',
@@ -134,11 +141,10 @@ export function Testimonials() {
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
-                  className={`transition-all duration-300 cursor-pointer ${
-                    i === current
+                  className={`transition-all duration-300 cursor-pointer ${i === current
                       ? 'w-6 h-0.5 bg-[#F5A820]'
                       : 'w-2 h-0.5 bg-white/20 hover:bg-white/40'
-                  }`}
+                    }`}
                 />
               ))}
             </div>

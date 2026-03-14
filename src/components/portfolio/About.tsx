@@ -2,10 +2,11 @@ import { useRef } from 'react'
 import { motion, useInView } from 'motion/react'
 
 const stats = [
-  { value: '8+', label: 'Years Experience' },
-  { value: '1.2K', label: 'Sessions Completed' },
-  { value: '47', label: 'Awards Won' },
-  { value: '12', label: 'Countries Covered' },
+  { value: '5+', label: 'Years Experience' },
+  { value: '150+', label: 'Weddings' },
+  { value: '35+', label: 'Corporate Events' },
+  { value: '75+', label: 'Live Events Coverage' },
+  { value: '1000+', label: 'Editing Projects' },
 ]
 
 export function About() {
@@ -32,7 +33,7 @@ export function About() {
             <div className="relative">
               <div className="aspect-[3/4] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=900&q=85&fit=crop"
+                  src="/images/founder.heic"
                   alt="RJ Media Works"
                   className="w-full h-full object-cover"
                 />
@@ -54,7 +55,7 @@ export function About() {
                 style={{ fontFamily: "'Cormorant Garamond', serif" }}
                 className="text-[#0D1B5E] text-4xl md:text-5xl font-bold leading-none"
               >
-                8+
+                5+
               </span>
               <span
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
@@ -94,21 +95,27 @@ export function About() {
 
             <p
               style={{ fontFamily: "'DM Sans', sans-serif" }}
-              className="text-white/60 text-base leading-relaxed mb-6 font-light"
+              className="text-white/60 text-base leading-relaxed mb-4 font-light"
             >
-              RJ Media Works is a creative photography and videography studio
-              built on one belief — every brand has a story worth telling
-              visually. We specialise in cinematic storytelling that transforms
-              weddings, brands, and moments into timeless visuals.
+              RJ Media Works is a creative media studio dedicated to capturing stories and transforming them into visually engaging experiences. With a passion for creativity and a strong focus on quality, RJ Media Works specializes in producing cinematic wedding films, wedding highlights, traditional wedding videos, reels, podcasts, and promotional advertisements.
             </p>
             <p
               style={{ fontFamily: "'DM Sans', sans-serif" }}
-              className="text-white/50 text-base leading-relaxed mb-12 font-light"
+              className="text-white/50 text-base leading-relaxed mb-4 font-light"
             >
-              From traditional weddings to dynamic brand shoots, our team
-              captures emotions, frames stories, and turns fleeting moments into
-              lasting legacies. We don't just shoot — we build brands through
-              the power of visual storytelling.
+              We believe that every moment has a story worth telling. Our goal is to preserve those moments through thoughtful editing, creative storytelling, and modern visual techniques. Whether it is a once-in-a-lifetime wedding celebration, a brand looking to promote its identity, or a creator wanting impactful digital content, RJ Media Works ensures that every project is crafted with precision and creativity.
+            </p>
+            <p
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="text-white/50 text-base leading-relaxed mb-4 font-light"
+            >
+              Our work is driven by attention to detail and an understanding of emotions behind every frame. By combining technical expertise with artistic vision, we create videos that are not only visually appealing but also meaningful and memorable.
+            </p>
+            <p
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="text-white/50 text-base leading-relaxed mb-10 font-light"
+            >
+              At RJ Media Works, we continuously explore new ideas, trends, and technologies to deliver fresh and engaging content. Our commitment is to provide clients with high-quality media that reflects their personality, brand, and story. RJ Media Works is not just about editing videos — it is about creating lasting impressions through powerful visuals and storytelling.
             </p>
 
             {/* Stats */}

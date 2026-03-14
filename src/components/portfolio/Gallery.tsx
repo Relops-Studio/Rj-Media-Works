@@ -9,32 +9,36 @@ type Category =
   | 'Street'
   | 'Fashion'
 
-interface Photo {
+interface MediaItem {
   id: number
   url: string
+  type: 'image' | 'video'
   category: Exclude<Category, 'All'>
   title: string
   span: 'normal' | 'tall' | 'wide'
 }
 
-const photos: Photo[] = [
+const media: MediaItem[] = [
   {
     id: 1,
     url: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80&fit=crop',
+    type: 'image',
     category: 'Portrait',
     title: 'Golden Hour',
     span: 'tall',
   },
   {
     id: 2,
-    url: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80&fit=crop',
+    url: '/videos/sample.mp4',
+    type: 'video',
     category: 'Wedding',
-    title: 'Together Forever',
-    span: 'normal',
+    title: 'Wedding Highlights',
+    span: 'wide',
   },
   {
     id: 3,
     url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&fit=crop',
+    type: 'image',
     category: 'Landscape',
     title: 'Mountain Dawn',
     span: 'wide',
@@ -42,6 +46,7 @@ const photos: Photo[] = [
   {
     id: 4,
     url: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=800&q=80&fit=crop',
+    type: 'image',
     category: 'Portrait',
     title: 'The Thinker',
     span: 'normal',
@@ -49,6 +54,7 @@ const photos: Photo[] = [
   {
     id: 5,
     url: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80&fit=crop',
+    type: 'image',
     category: 'Fashion',
     title: 'Editorial Noir',
     span: 'tall',
@@ -56,6 +62,7 @@ const photos: Photo[] = [
   {
     id: 6,
     url: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80&fit=crop',
+    type: 'image',
     category: 'Street',
     title: 'City Pulse',
     span: 'normal',
@@ -63,6 +70,7 @@ const photos: Photo[] = [
   {
     id: 7,
     url: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&q=80&fit=crop',
+    type: 'image',
     category: 'Wedding',
     title: 'First Dance',
     span: 'normal',
@@ -70,6 +78,7 @@ const photos: Photo[] = [
   {
     id: 8,
     url: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80&fit=crop',
+    type: 'image',
     category: 'Landscape',
     title: 'Foggy Valley',
     span: 'wide',
@@ -77,6 +86,7 @@ const photos: Photo[] = [
   {
     id: 9,
     url: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80&fit=crop',
+    type: 'image',
     category: 'Fashion',
     title: 'Urban Grace',
     span: 'tall',
@@ -84,20 +94,23 @@ const photos: Photo[] = [
   {
     id: 10,
     url: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80&fit=crop',
+    type: 'image',
     category: 'Street',
     title: 'Night City',
     span: 'normal',
   },
   {
     id: 11,
-    url: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80&fit=crop',
-    category: 'Wedding',
-    title: 'Pure Joy',
+    url: '/videos/sample.mp4',
+    type: 'video',
+    category: 'Fashion',
+    title: 'Fashion Reel',
     span: 'normal',
   },
   {
     id: 12,
     url: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=80&fit=crop',
+    type: 'image',
     category: 'Portrait',
     title: 'Soft Light',
     span: 'tall',
@@ -121,8 +134,8 @@ export function Gallery() {
 
   const filtered =
     activeCategory === 'All'
-      ? photos
-      : photos.filter((p) => p.category === activeCategory)
+      ? media
+      : media.filter((p) => p.category === activeCategory)
 
   return (
     <section id="gallery" className="bg-[#060E2E] py-28 px-6 md:px-12">
@@ -172,44 +185,55 @@ export function Gallery() {
 
         {/* Masonry Grid */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-          {filtered.map((photo, i) => (
+          {filtered.map((item, i) => (
             <motion.div
-              key={photo.id}
+              key={item.id}
               layout
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
               className={`break-inside-avoid relative overflow-hidden group cursor-pointer ${
-                photo.span === 'tall' ? 'row-span-2' : ''
+                item.span === 'tall' ? 'row-span-2' : ''
               }`}
-              onMouseEnter={() => setHoveredId(photo.id)}
+              onMouseEnter={() => setHoveredId(item.id)}
               onMouseLeave={() => setHoveredId(null)}
             >
               <div
                 className={`relative overflow-hidden ${
-                  photo.span === 'tall'
+                  item.span === 'tall'
                     ? 'aspect-[3/4]'
-                    : photo.span === 'wide'
+                    : item.span === 'wide'
                       ? 'aspect-[16/9]'
                       : 'aspect-[4/3]'
                 }`}
               >
-                <img
-                  src={photo.url}
-                  alt={photo.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                {item.type === 'video' ? (
+                  <video
+                    src={item.url}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                ) : (
+                  <img
+                    src={item.url}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                )}
                 {/* Hover overlay — navy */}
                 <div
                   className={`absolute inset-0 bg-gradient-to-t from-[#0D1B5E]/90 via-[#0D1B5E]/20 to-transparent transition-opacity duration-400 ${
-                    hoveredId === photo.id ? 'opacity-100' : 'opacity-0'
+                    hoveredId === item.id ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
                 {/* Info */}
                 <div
                   className={`absolute bottom-0 left-0 right-0 p-5 transform transition-all duration-400 ${
-                    hoveredId === photo.id
+                    hoveredId === item.id
                       ? 'translate-y-0 opacity-100'
                       : 'translate-y-4 opacity-0'
                   }`}
@@ -218,13 +242,13 @@ export function Gallery() {
                     style={{ fontFamily: "'DM Sans', sans-serif" }}
                     className="text-[#F5A820] text-[10px] tracking-[0.3em] uppercase block mb-1"
                   >
-                    {photo.category}
+                    {item.category}
                   </span>
                   <h3
                     style={{ fontFamily: "'Cormorant Garamond', serif" }}
                     className="text-white text-xl font-light"
                   >
-                    {photo.title}
+                    {item.title}
                   </h3>
                 </div>
               </div>

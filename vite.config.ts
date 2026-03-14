@@ -21,6 +21,12 @@ const config = defineConfig({
       nitroV2Plugin({
         compatibilityDate: '2025-10-08',
         preset: process.env.GITHUB_ACTIONS ? 'github-pages' : 'node',
+        prerender: process.env.GITHUB_ACTIONS
+          ? {
+              routes: ['/'],
+              crawlLinks: true,
+            }
+          : undefined,
       }),
     devtoolsJson(),
     viteReact(),

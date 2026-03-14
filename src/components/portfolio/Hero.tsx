@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 
 const slides = [
   {
-    url: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1920&q=85&fit=crop',
+    url: '/images/weworks.jpg?crop=1',
     label: 'Portrait',
     caption: 'Emotions Frozen in Time',
   },
@@ -48,9 +48,8 @@ export function Hero() {
       {slides.map((slide, i) => (
         <div
           key={slide.url}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            i === current ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? 'opacity-100' : 'opacity-0'
+            }`}
         >
           <img
             src={slide.url}
@@ -61,9 +60,11 @@ export function Hero() {
               transition: 'transform 6s ease-out',
             }}
           />
+          {/* Dark overlay for better text contrast */}
+          <div className="absolute inset-0 bg-black/30" />
           {/* Navy gradient overlays */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B5E] via-[#0D1B5E]/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B5E]/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B5E] via-[#0D1B5E]/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B5E] via-[#0D1B5E]/80 to-transparent w-full md:w-3/4" />
         </div>
       ))}
 
@@ -154,11 +155,10 @@ export function Hero() {
           <button
             key={i}
             onClick={() => goTo(i)}
-            className={`transition-all duration-300 cursor-pointer ${
-              i === current
-                ? 'w-8 h-0.5 bg-[#F5A820]'
-                : 'w-2 h-0.5 bg-white/30 hover:bg-white/60'
-            }`}
+            className={`transition-all duration-300 cursor-pointer ${i === current
+              ? 'w-8 h-0.5 bg-[#F5A820]'
+              : 'w-2 h-0.5 bg-white/30 hover:bg-white/60'
+              }`}
           />
         ))}
       </div>
