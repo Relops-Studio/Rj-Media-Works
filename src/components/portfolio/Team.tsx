@@ -6,59 +6,94 @@ import { Instagram, Youtube, Play } from 'lucide-react'
 
 const team = [
   {
-    name: 'Yogesh Papanwar',
-    role: 'Cinematographer',
-    specialty: 'Wedding · Brand Shoots',
-    bio: 'Capturing emotions. Framing stories. Turning moments into timeless visuals. From traditional weddings to dynamic brand shoots, Yogesh creates visuals that speak louder than words.',
-    image: '/team/yogesh-papanwar.jpg',
-    social: {
-      instagram: '#',
-      youtube: '#',
-    },
-    shoots: '500+',
-    tag: 'Lead',
-  },
-  {
     name: 'Ravi Joshi',
     role: 'Founder & Director',
     specialty: 'Portrait · Editorial',
     bio: 'The visionary behind RJ Media Works. Ravi built this studio on one conviction — every brand has a story worth telling. With 8+ years behind the lens, he leads with purpose and passion.',
-    image:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&fit=crop',
+    image: '/team/DSC_9969%20copy.jpg.jpeg',
     social: {
       instagram: '#',
-      youtube: '#',
     },
-    shoots: '1,200+',
     tag: 'Founder',
   },
   {
-    name: 'Arjun Mehta',
-    role: 'Photographer',
-    specialty: 'Fashion · Events',
-    bio: "Arjun's eye for detail and light elevates every frame. Trained in commercial photography, he brings magazine-ready quality to brand campaigns and live event coverage.",
-    image:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&fit=crop',
+    name: 'Yogesh Papanwar',
+    role: 'Cinematographer',
+    specialty: 'Wedding · Brand Shoots',
+    bio: 'Capturing emotions. Framing stories. Turning moments into timeless visuals. From traditional weddings to dynamic brand shoots, Yogesh creates visuals that speak louder than words.',
+    image: '/team/BK0_0213%20copy.jpg.jpeg',
     social: {
       instagram: '#',
-      youtube: '#',
+
     },
-    shoots: '700+',
+    tag: 'Lead',
+  },
+  {
+    name: 'Member 3',
+    role: 'Photographer',
+    specialty: 'Fashion · Events',
+    bio: "An eye for detail and light that elevates every frame. Trained in commercial photography, bringing magazine-ready quality to brand campaigns and live event coverage.",
+    image: '/team/DSC_2237%20copy.jpg.jpeg',
+
+    social: {
+      instagram: '#',
+    },
     tag: 'Creative',
   },
   {
-    name: 'Priya Sharma',
+    name: 'Member 4',
     role: 'Creative Director',
-    specialty: 'Brand Identity · Art Direction',
-    bio: 'Priya shapes the visual language of every RJ Media project. Her background in design and fine arts ensures that every campaign has cohesion, boldness, and lasting impact.',
-    image:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80&fit=crop',
+    specialty: 'Brand Identity ',
+    bio: 'Shaping the visual language of every RJ Media project. A background in design and fine arts ensures that every campaign has cohesion, boldness, and lasting impact.',
+    image: '/team/FB_IMG_1772701688695.jpg.jpeg',
     social: {
       instagram: '#',
-      youtube: '#',
     },
-    shoots: '400+',
     tag: 'Director',
+  },
+  {
+    name: 'Member 5',
+    role: 'Senior Editor',
+    specialty: 'Color Grading · Post',
+    bio: 'Mastering the final product with precision. Transforming raw footage into cinematic masterpieces with expert color grading and seamless narrative flow.',
+    image: '/team/IMG_4808.jpg.jpeg',
+    social: {
+      instagram: '#',
+    },
+    tag: 'Post',
+  },
+  {
+    name: 'Member 6',
+    role: 'Drone Specialist',
+    specialty: 'Aerial Cinema ',
+    bio: 'Taking our visual storytelling to new heights. Fully licensed and passionate about capturing breathtaking aerial perspectives for events and commercial projects.',
+    image: '/team/IMG_7124.JPG.jpeg',
+    social: {
+      instagram: '#',
+    },
+    tag: 'Aerial',
+  },
+  {
+    name: 'Member 7',
+    role: 'Lighting Tech',
+    specialty: 'Studio · On-Location',
+    bio: 'Crafting the perfect atmosphere with light. Experienced in complex setups that bring out mood and texture, whether in the studio or out on location.',
+    image: '/team/IMG_9333.JPG.jpeg',
+    social: {
+      instagram: '#',
+    },
+    tag: 'Tech',
+  },
+  {
+    name: 'Member 8',
+    role: 'Production Assistant',
+    specialty: 'Coordination · BTS',
+    bio: 'The glue that holds every production together. Managing schedules, handling equipment, and capturing vital behind-the-scenes moments throughout the shoot.',
+    image: '/team/Screenshot_20260222-233149.Instagram.png',
+    social: {
+      instagram: '#',
+    },
+    tag: 'Support',
   },
 ]
 
