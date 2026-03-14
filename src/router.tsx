@@ -12,6 +12,7 @@ export const getRouter = () => {
 
   const router = createRouter({
     routeTree,
+    basepath: import.meta.env.BASE_URL || '/',
     context: { ...rqContext },
     defaultPreload: 'intent',
     defaultErrorComponent: ({ error, info, reset }) => (

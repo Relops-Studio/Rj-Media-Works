@@ -9,6 +9,7 @@ import { nitroV2Plugin } from '@tanstack/nitro-v2-vite-plugin'
 const forSites = process.env?.FOR_SITES === 'true'
 
 const config = defineConfig({
+  base: process.env.GITHUB_ACTIONS ? '/Rj-Media-Works/' : '/',
   plugins: [
     // this is the plugin that enables path aliases
     viteTsConfigPaths({
