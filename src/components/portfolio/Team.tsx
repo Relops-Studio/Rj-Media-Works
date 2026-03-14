@@ -4,7 +4,21 @@ import { useRef } from 'react'
 import { motion, useInView } from 'motion/react'
 import { Instagram, Youtube, Play } from 'lucide-react'
 
-const team = [
+interface TeamMember {
+  name: string
+  role: string
+  specialty: string
+  bio: string
+  image: string
+  social: {
+    instagram?: string
+    youtube?: string
+  }
+  shoots?: string
+  tag: string
+}
+
+const team: TeamMember[] = [
   {
     name: 'Ravi Joshi',
     role: 'Founder & Director',

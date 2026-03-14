@@ -19,7 +19,7 @@ const config = defineConfig({
     forSites &&
       nitroV2Plugin({
         compatibilityDate: '2025-10-08',
-        preset: 'node',
+        preset: process.env.GITHUB_ACTIONS ? 'github-pages' : 'node',
       }),
     devtoolsJson(),
     viteReact(),
