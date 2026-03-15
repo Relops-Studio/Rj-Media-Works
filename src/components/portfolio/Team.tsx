@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'motion/react'
-import { Youtube } from 'lucide-react'
+
 
 interface TeamMember {
   name: string
@@ -116,18 +116,7 @@ function TeamCard({
             </span>
           </div>
 
-          {/* Social icons — reveal on hover */}
-          <div className="absolute bottom-4 left-4 flex gap-2.5 opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-400">
-            {member.social?.youtube && (
-              <a
-                href={member.social.youtube}
-                className="w-8 h-8 bg-[#F5A820] flex items-center justify-center text-[#0D1B5E] hover:bg-white transition-all duration-200"
-                aria-label="YouTube"
-              >
-                <Youtube size={13} strokeWidth={2} />
-              </a>
-            )}
-          </div>
+
         </div>
 
         {/* Info block */}
