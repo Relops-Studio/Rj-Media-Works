@@ -9,7 +9,6 @@ import type { QueryClient } from '@tanstack/react-query'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from 'next-themes'
 
-import { getBaseUrl } from '@/server/functions/request'
 import {
   createOGMetaTags,
   generateOGImageUrl,
@@ -35,10 +34,8 @@ if (import.meta.env.VITE_INSTRUMENTATION_SCRIPT_SRC) {
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
   loader: async () => {
-    const baseUrl = await getBaseUrl()
-
     return {
-      baseUrl,
+      baseUrl: 'https://rj-media-works-hvmg.vercel.app',
     }
   },
   head: ({ loaderData }) => {
