@@ -17,10 +17,14 @@ const config = defineConfig({
     }),
     tailwindcss(),
     tanstackStart(),
-    forSites &&
+    (forSites || process.env.VERCEL === '1') &&
       nitroV2Plugin({
         compatibilityDate: '2025-10-08',
-        preset: process.env.GITHUB_ACTIONS ? 'github-pages' : 'node',
+        preset: process.env.VERCEL === '1' 
+          ? 'vercel' 
+          : process.env.GITHUB_ACTIONS 
+            ? 'github-pages' 
+            : 'node',
         prerender: process.env.GITHUB_ACTIONS
           ? {
               routes: ['/'],
