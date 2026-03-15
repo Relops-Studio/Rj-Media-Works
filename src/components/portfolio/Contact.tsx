@@ -1,12 +1,16 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'motion/react'
-import { Instagram, Mail, Phone, MapPin, Send, Youtube } from 'lucide-react'
+import { Instagram, Mail, Phone, MapPin, Send } from 'lucide-react'
+
+// ⚠️ UPDATE THIS with the real RJ Media Works WhatsApp number (digits only, with country code)
+const WHATSAPP_NUMBER = '917350583575'
 
 export function Contact() {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
   const [formState, setFormState] = useState({
     name: '',
+    phone: '',
     email: '',
     service: '',
     message: '',
@@ -15,6 +19,26 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+
+    // Build the WhatsApp message
+    const lines = [
+      `🎬 *New Enquiry — RJ Media Works*`,
+      ``,
+      `*Name:* ${formState.name}`,
+      `*Phone:* ${formState.phone}`,
+      `*Email:* ${formState.email}`,
+      `*Service:* ${formState.service || 'Not specified'}`,
+      ``,
+      `*Message:*`,
+      formState.message || '—',
+    ]
+
+    const text = encodeURIComponent(lines.join('\n'))
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer')
+
     setSubmitted(true)
   }
 
@@ -111,18 +135,39 @@ export function Contact() {
                       style={{ fontFamily: "'DM Sans', sans-serif" }}
                       className="block text-white/40 text-[10px] tracking-[0.3em] uppercase mb-2"
                     >
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formState.phone}
+                      onChange={(e) =>
+                        setFormState((s) => ({ ...s, phone: e.target.value }))
+                      }
+                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      className="w-full bg-transparent border-b border-white/15 text-white text-sm py-3 focus:outline-none focus:border-[#F5A820] transition-colors duration-300 placeholder:text-white/20"
+                      placeholder="+91 98765 43210"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      className="block text-white/40 text-[10px] tracking-[0.3em] uppercase mb-2"
+                    >
                       Email Address
                     </label>
                     <input
                       type="email"
-                      required
                       value={formState.email}
                       onChange={(e) =>
                         setFormState((s) => ({ ...s, email: e.target.value }))
                       }
                       style={{ fontFamily: "'DM Sans', sans-serif" }}
                       className="w-full bg-transparent border-b border-white/15 text-white text-sm py-3 focus:outline-none focus:border-[#F5A820] transition-colors duration-300 placeholder:text-white/20"
-                      placeholder="you@example.com"
+                      placeholder="rj6264738@gmail.com"
                     />
                   </div>
                 </div>
@@ -231,11 +276,11 @@ export function Contact() {
                       Email
                     </span>
                     <a
-                      href="mailto:hello@rjmediaworks.in"
+                      href="mailto:rj6264738@gmail.com"
                       style={{ fontFamily: "'DM Sans', sans-serif" }}
                       className="text-white/80 text-sm hover:text-[#F5A820] transition-colors"
                     >
-                      hello@rjmediaworks.in
+                      rj6264738@gmail.com
                     </a>
                   </div>
                 </li>
@@ -255,11 +300,11 @@ export function Contact() {
                       Phone
                     </span>
                     <a
-                      href="tel:+919876543210"
+                      href="tel:+917350583575"
                       style={{ fontFamily: "'DM Sans', sans-serif" }}
                       className="text-white/80 text-sm hover:text-[#F5A820] transition-colors"
                     >
-                      +91 98765 43210
+                      +91 7350583575
                     </a>
                   </div>
                 </li>
@@ -299,20 +344,12 @@ export function Contact() {
               </h3>
               <div className="flex gap-3">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/rj_media_works1"
                   target="_blank"
                   rel="noreferrer"
                   className="w-10 h-10 bg-[#F5A820]/10 border border-[#F5A820]/20 flex items-center justify-center text-[#F5A820]/70 hover:bg-[#F5A820] hover:text-[#0D1B5E] transition-all duration-300"
                 >
                   <Instagram size={16} strokeWidth={1.5} />
-                </a>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 bg-[#F5A820]/10 border border-[#F5A820]/20 flex items-center justify-center text-[#F5A820]/70 hover:bg-[#F5A820] hover:text-[#0D1B5E] transition-all duration-300"
-                >
-                  <Youtube size={16} strokeWidth={1.5} />
                 </a>
               </div>
             </div>
