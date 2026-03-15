@@ -8,7 +8,7 @@ import appCss from '../styles.css?url'
 import type { QueryClient } from '@tanstack/react-query'
 import { Toaster } from '@/components/ui/sonner'
 import { ThemeProvider } from 'next-themes'
-import { authMiddleware } from '@/server/functions/auth'
+
 import { getBaseUrl } from '@/server/functions/request'
 import {
   createOGMetaTags,
@@ -35,11 +35,9 @@ if (import.meta.env.VITE_INSTRUMENTATION_SCRIPT_SRC) {
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
   loader: async () => {
-    const { currentUser } = await authMiddleware()
     const baseUrl = await getBaseUrl()
 
     return {
-      currentUser,
       baseUrl,
     }
   },

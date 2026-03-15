@@ -8,7 +8,7 @@ import { Team } from '@/components/portfolio/Team'
 import { Testimonials } from '@/components/portfolio/Testimonials'
 import { Contact } from '@/components/portfolio/Contact'
 
-export const Route = createFileRoute('/_public/')({
+export const Route = createFileRoute('/')({
   component: Index,
 })
 
