@@ -1,45 +1,18 @@
 import { defineConfig } from 'vite'
-import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
-import devtoolsJson from 'vite-plugin-devtools-json'
-import { nitroV2Plugin } from '@tanstack/nitro-v2-vite-plugin'
 
-const forSites = process.env?.FOR_SITES === 'true'
-
-const config = defineConfig({
-  base: process.env.GITHUB_ACTIONS ? '/Rj-Media-Works/' : '/',
+export default defineConfig({
   plugins: [
-    // this is the plugin that enables path aliases
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
     tailwindcss(),
-    tanstackStart(),
-    (forSites || process.env.VERCEL === '1') &&
-      nitroV2Plugin({
-        compatibilityDate: '2025-10-08',
-        preset: process.env.VERCEL === '1' 
-          ? 'vercel' 
-          : process.env.GITHUB_ACTIONS 
-            ? 'github-pages' 
-            : 'node',
-        prerender: process.env.GITHUB_ACTIONS
-          ? {
-              routes: ['/'],
-              crawlLinks: true,
-            }
-          : undefined,
-      }),
-    devtoolsJson(),
     viteReact(),
   ],
   server: {
     host: '::',
-    allowedHosts: true,
-    hmr: true,
+    port: 3000,
   },
 })
-
-export default config
