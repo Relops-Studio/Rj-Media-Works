@@ -102,11 +102,13 @@ export function Hero() {
 
           {/* Main headline */}
           <h1
-            style={{ fontFamily: "'Cormorant Garamond', serif" }}
-            className="text-white text-6xl md:text-8xl lg:text-[9rem] font-light leading-[0.9] mb-6"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+            className="text-white text-6xl md:text-8xl lg:text-[9rem] font-black leading-[0.85] mb-6 tracking-tight"
           >
             <span className="block">We Build</span>
-            <span className="block italic text-[#F5A820]">Brands</span>
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#F5A820] to-[#FFD074] drop-shadow-sm">
+              Brands
+            </span>
             <span className="block">Visually</span>
           </h1>
 

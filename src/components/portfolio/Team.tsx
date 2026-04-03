@@ -10,6 +10,7 @@ interface TeamMember {
   specialty: string
   bio: string
   image: string
+  zoom?: string
 }
 
 const team: TeamMember[] = [
@@ -17,56 +18,57 @@ const team: TeamMember[] = [
     name: 'Rohit Joshi',
     role: 'Founder & Director',
     specialty: 'Portrait · Editorial',
-    bio: 'The visionary behind RJ Media Works. Ravi built this studio on one conviction — every brand has a story worth telling. With 8+ years behind the lens, he leads with purpose and passion.',
+    bio: 'Crafting stories through lens and emotion.From traditional weddings to powerful brand visuals - we turn ideas into impactful visuals.',
     image: '/team/DSC_9969%20copy.jpg.jpeg',
   },
   {
     name: 'Yogesh Papanwar',
     role: 'Cinematographer',
     specialty: 'Coordination · BTS',
-    bio: 'The glue that holds every production together. Managing schedules, handling equipment, and capturing vital behind-the-scenes moments throughout the shoot.',
+    bio: 'Capturing emotions. Framing stories. Turning moments into timeless visuals. We create visuals that speak louder than words.',
     image: '/team/Screenshot_20260222-233149.Instagram.png',
   },
   {
-    name: 'Yogesh Papanwar',
-    role: 'Cinematographer',
+    name: 'Vaibhav Kurhe',
+    role: 'Creative Assistant',
     specialty: 'Wedding · Brand Shoots',
-    bio: 'Capturing emotions. Framing stories. Turning moments into timeless visuals. From traditional weddings to dynamic brand shoots, Yogesh creates visuals that speak louder than words.',
+    bio: 'Behind the scenes.Behind the lens.Behind every great shot.I capture the moments that make the magic happen.',
     image: '/team/BK0_0213%20copy.jpg.jpeg',
+    zoom: 'scale-125 object-center',
   },
   {
-    name: 'Arujun Hambarde',
+    name: 'Arjun Hambarde',
     role: 'Video Editor',
     specialty: 'Wedding · Brand Shoots',
-    bio: "An eye for detail and light that elevates every frame. Trained in commercial photography, bringing magazine-ready quality to brand campaigns and live event coverage.",
+    bio: "Shaping raw clips into powerful stories.Adding rhythm, emotion, and flow.Turning footage into cinematic magic.",
     image: '/team/DSC_2237%20copy.jpg.jpeg',
   },
   {
     name: 'Sudarshan Sontakke',
     role: 'Reel Editor',
     specialty: 'Reels',
-    bio: 'Capturing the essence of the moment with creativity and precision.',
+    bio: 'Capturing trends. Editing with creativity. Making every reel unforgettable..',
     image: '/team/IMG_9333.JPG.jpeg',
   },
   {
     name: 'Alim Shaikh',
     role: 'Graphic Designer',
     specialty: ' Design and Posters',
-    bio: 'Shaping the visual language of every RJ Media project.',
+    bio: 'Turning ideas into visual creativity. Designing stories through colors and shapes. ',
     image: '/team/FB_IMG_1772701688695.jpg.jpeg',
   },
   {
     name: 'Haji Baig Lucky',
     role: 'Videographer',
     specialty: 'Wedding · Brand Shoots',
-    bio: 'Capturing moments with creativity and precision.',
+    bio: 'Capturing moments with creativity and precision. ',
     image: '/team/IMG_4808.jpg.jpeg',
   },
   {
     name: 'Karan Navghare',
     role: 'Photographer',
     specialty: 'Portrait ',
-    bio: 'A visual storyteller with a passion for capturing the beauty of the world around him.',
+    bio: 'Freezing moments with a single click. Finding beauty in every frame. Turning memories into timeless photographs.',
     image: '/team/IMG_7124.JPG.jpeg',
   },
 
@@ -101,7 +103,7 @@ function TeamCard({
           <img
             src={member.image}
             alt={member.name}
-            className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out"
+            className={`w-full h-full object-cover ${member.zoom || 'object-top'} grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 ease-out`}
           />
           {/* Navy gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B5E] via-[#0D1B5E]/20 to-transparent" />
@@ -234,8 +236,8 @@ export function Team() {
             </div>
           </div>
           <p
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
-            className="text-white/25 text-[10px] tracking-[0.4em] uppercase"
+            style={{ fontFamily: "'Outfit', sans-serif" }}
+            className="text-[#F5A820]/40 text-[11px] tracking-[0.5em] uppercase font-bold"
           >
             We Build Brands
           </p>

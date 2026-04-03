@@ -372,8 +372,8 @@ export function Contact() {
                 "Capturing emotions. Framing stories."
               </p>
               <span
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
-                className="text-[#F5A820] text-[10px] tracking-widest uppercase"
+                style={{ fontFamily: "'Outfit', sans-serif" }}
+                className="text-[#F5A820] text-[10px] tracking-[0.5em] uppercase font-bold"
               >
                 We Build Brands
               </span>
@@ -391,12 +391,32 @@ export function Contact() {
           >
             © {new Date().getFullYear()} RJ Media Works. All rights reserved.
           </span>
-          <span
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
-            className="text-[#F5A820]/40 text-xs tracking-widest uppercase"
-          >
-            We Build Brands
-          </span>
+          <div className="flex flex-col items-center sm:items-end gap-1">
+            <span
+              style={{ fontFamily: "'Outfit', sans-serif" }}
+              className="text-[#F5A820]/40 text-xs tracking-[0.4em] uppercase font-bold"
+            >
+              We Build Brands
+            </span>
+            <a
+              href="https://relops.studio"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-2 group transition-opacity hover:opacity-100 opacity-90"
+            >
+              <span
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                className="text-white/60 text-[10px] tracking-widest uppercase group-hover:text-white transition-colors"
+              >
+                Made by
+              </span>
+              <img
+                src="https://relops.studio/logo02.png"
+                alt="Relops Studio Logo"
+                className="h-6 w-auto brightness-200 group-hover:brightness-150 transition-all duration-300"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </section>
