@@ -402,18 +402,18 @@ export function Contact() {
               href="https://relops.studio"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 group transition-opacity hover:opacity-100 opacity-90"
+              className="flex items-center gap-2 group transition-all duration-300 opacity-70 hover:opacity-100"
             >
               <span
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
-                className="text-white/60 text-[10px] tracking-widest uppercase group-hover:text-white transition-colors"
+                className="text-white/50 text-[10px] tracking-widest uppercase group-hover:text-white/80 transition-colors"
               >
                 Made by
               </span>
               <img
                 src="https://relops.studio/logo02.png"
                 alt="Relops Studio Logo"
-                className="h-6 w-auto brightness-200 group-hover:brightness-150 transition-all duration-300"
+                className="h-6 w-auto transition-all duration-300"
               />
             </a>
           </div>
