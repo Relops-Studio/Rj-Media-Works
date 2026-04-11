@@ -22,14 +22,6 @@ interface MediaItem {
 
 const media: MediaItem[] = [
   {
-    id: 1,
-    url: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80&fit=crop',
-    type: 'image',
-    category: 'Portrait',
-    title: 'Golden Hour',
-    span: 'tall',
-  },
-  {
     id: 2,
     url: '/images/image1.jpeg',
     type: 'image',
@@ -55,12 +47,12 @@ const media: MediaItem[] = [
   },
   {
     id: 5,
-    url: '/images/image7.jpeg',
+    url: '/images/image.png',
     type: 'image',
     category: 'Portrait',
     title: 'Moments',
     span: 'normal',
-    objectPosition: 'center',
+    objectPosition: 'center top',
   },
   {
     id: 6,
